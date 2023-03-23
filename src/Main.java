@@ -3,18 +3,15 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String stringResultados = null;
-        String stringPronostico = null;
-        for (String arg : args) {
-            if (arg.contains("resultados")) {
-                stringResultados = arg;
-            } else if (arg.contains("pronostico")) {
-                stringPronostico = arg;
-            }
-        }
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Ingrese el directorio del archivo de resultados");
+        String stringResultados = entrada.nextLine();
+        System.out.println("Ingrese el directorio del archivo de pronostico");
+        String stringPronostico = entrada.nextLine();
         int puntaje = 0;
         boolean seEncontro = false;
         List<Equipo> equipos = new ArrayList<>();
